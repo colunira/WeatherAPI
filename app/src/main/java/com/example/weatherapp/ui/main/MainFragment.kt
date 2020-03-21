@@ -11,6 +11,8 @@ import com.example.weatherapp.R
 import kotlinx.android.synthetic.main.main_fragment.*
 import kotlinx.android.synthetic.main.main_fragment.view.*
 import kotlinx.android.synthetic.main.main_fragment.view.city_edit_text
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 
 class MainFragment : Fragment() {
 
@@ -29,9 +31,7 @@ class MainFragment : Fragment() {
                 city_text_input.error = getString(R.string.city_name_error)
             } else {
                 city_text_input.error = null
-                activity!!.supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, WeatherFragment.newInstance())
-                    .commitNow()
+                findNavController().navigate(MainFragmentDirections.actionMainFragmentToWeatherFragment())
             }
         }
 
