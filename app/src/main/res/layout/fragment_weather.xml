@@ -8,8 +8,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp ">
 
         <TextView
             android:id="@+id/cityNameText"
@@ -56,51 +58,61 @@
             android:textSize="24sp" />
 
         <RelativeLayout
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingVertical="20dp">
 
             <ImageView
                 android:id="@+id/sunriseImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
                 android:layout_weight="1"
-                android:src="@drawable/ic_sunrise"
-                android:layout_alignParentLeft="true"/>
+                android:src="@drawable/ic_sunrise" />
 
             <TextView
                 android:id="@+id/sunriseTimeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="6:27"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/sunriseImage"/>
+                android:layout_toRightOf="@+id/sunriseImage"
+                android:layout_weight="1"
+                android:fontFamily="@font/comfortaa"
+                android:paddingHorizontal="10dp"
+                android:text="6:27"
+                android:textSize="24sp" />
 
             <ImageView
                 android:id="@+id/sunsetImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_moon_48"
+                android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/sunriseTimeText"
-                android:layout_centerVertical="true"/>
+                android:layout_weight="1"
+                android:src="@drawable/ic_moon_48" />
 
             <TextView
                 android:id="@+id/sunsetTimeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="19:24"
+                android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/sunsetImage"
-                android:layout_centerVertical="true"/>
+                android:layout_weight="1"
+                android:fontFamily="@font/comfortaa"
+                android:paddingHorizontal="10dp"
+                android:text="19:24"
+                android:textSize="24sp" />
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/weatherDescText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:fontFamily="@font/comfortaa"
+            android:text="overcast clouds"
+            android:textAlignment="center"
+            android:textSize="24sp" />
 
     </LinearLayout>
 </FrameLayout>
