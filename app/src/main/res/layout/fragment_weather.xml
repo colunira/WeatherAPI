@@ -69,7 +69,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_weight="1"
-                android:src="@drawable/ic_sunrise" />
+                android:src="@drawable/ic_sunrise"
+                android:tint="#FFB74D" />
 
             <TextView
                 android:id="@+id/sunriseTimeText"
@@ -79,7 +80,7 @@
                 android:layout_toRightOf="@+id/sunriseImage"
                 android:layout_weight="1"
                 android:fontFamily="@font/comfortaa"
-                android:paddingHorizontal="10dp"
+                android:paddingHorizontal="15dp"
                 android:text="6:27"
                 android:textSize="24sp" />
 
@@ -90,7 +91,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/sunriseTimeText"
                 android:layout_weight="1"
-                android:src="@drawable/ic_moon_48" />
+                android:src="@drawable/ic_moon_48"
+                android:tint="#7986CB" />
 
             <TextView
                 android:id="@+id/sunsetTimeText"
@@ -100,7 +102,7 @@
                 android:layout_toRightOf="@+id/sunsetImage"
                 android:layout_weight="1"
                 android:fontFamily="@font/comfortaa"
-                android:paddingHorizontal="10dp"
+                android:paddingHorizontal="15dp"
                 android:text="19:24"
                 android:textSize="24sp" />
         </RelativeLayout>
