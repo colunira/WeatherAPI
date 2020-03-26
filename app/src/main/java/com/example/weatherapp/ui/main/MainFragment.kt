@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.main_fragment.view.*
 import kotlinx.android.synthetic.main.main_fragment.view.city_edit_text
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 
 class MainFragment : Fragment() {
 
@@ -33,12 +34,13 @@ class MainFragment : Fragment() {
                 city_text_input.error = getString(R.string.city_name_error)
             } else {
                 city_text_input.error = null
-                findNavController().navigate(MainFragmentDirections.actionMainFragmentToLoadingFragment(view.city_edit_text.toString()))
+                findNavController().navigate(MainFragmentDirections.actionMainFragmentToLoadingFragment(view.city_edit_text.text.toString()))
             }
         }
 
         view.city_edit_text.setOnKeyListener { v, keyCode, event ->
             city_text_input.error = null
+            errorLoading.visibility = View.INVISIBLE
             false
         }
 
@@ -47,6 +49,11 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        val args: MainFragmentArgs by navArgs()
+
+        if (args.isCallFailed) {
+            errorLoading.visibility = View.VISIBLE
+        }
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
     }
 

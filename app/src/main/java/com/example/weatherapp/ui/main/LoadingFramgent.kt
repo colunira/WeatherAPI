@@ -1,6 +1,7 @@
 package com.example.weatherapp.ui.main
 
 import android.os.Bundle
+import android.text.format.Time
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -36,9 +37,9 @@ class LoadingFramgent : Fragment() {
 
         viewModel.getCityWeatherByName(args.cityName).observe(viewLifecycleOwner, Observer { city ->
             if (city == null) {
-                findNavController().navigate(LoadingFramgentDirections.actionLoadingFramgentToMainFragment())
+                findNavController().navigate(LoadingFramgentDirections.actionLoadingFramgentToMainFragment(true))
             } else {
-                findNavController().navigate(LoadingFramgentDirections.actionLoadingFramgentToWeatherFragment())
+                findNavController().navigate(LoadingFramgentDirections.actionLoadingFramgentToWeatherFragment(city))
             }
         })
     }

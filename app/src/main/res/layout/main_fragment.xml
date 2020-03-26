@@ -37,6 +37,17 @@
             android:textColor="@color/primaryDarkColor"
             android:textSize="36sp" />
 
+        <TextView
+            android:id="@+id/errorLoading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Error while loading the weather"
+            android:textAlignment="center"
+            android:textColor="@color/secondaryDarkColor"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/city_text_input"
             android:layout_width="match_parent"

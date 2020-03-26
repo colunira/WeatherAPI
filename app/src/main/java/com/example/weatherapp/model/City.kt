@@ -1,7 +1,9 @@
 package com.example.weatherapp.model
 
-import android.view.ViewDebug
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class City(
     val base: String,
     val clouds: Clouds,
@@ -16,7 +18,7 @@ data class City(
     val visibility: Int,
     val weather: List<Weather>,
     val wind: Wind
-) {
+) : Parcelable {
     override fun toString(): String {
         return name
     }

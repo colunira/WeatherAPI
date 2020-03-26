@@ -19,8 +19,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_air" />
-                            <entry key="sourceFile" value="C:\Users\Kulka\Downloads\air.svg" />
+                            <entry key="outputName" value="ic_clear" />
+                            <entry key="sourceFile" value="C:\Users\Kulka\Downloads\sunny.svg" />
                           </map>
                         </option>
                       </PersistentState>

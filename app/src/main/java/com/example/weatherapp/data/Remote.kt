@@ -16,7 +16,7 @@ class Remote {
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
         .build()
     private val weatherAPI = retrofit.create(WeatherAPI::class.java)
-    private val appID = "dfdb49a72d79d0d239ddb725ba309a70"
+    private val appID = ""
 
     fun getCityWeatherByName(cityName: String): LiveData<City> {
         val responseWeather = MutableLiveData<City>()

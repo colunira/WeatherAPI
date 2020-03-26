@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.LoadingFramgent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="170dp"
-        android:layout_height="152dp"
-        android:src="@android:drawable/ic_lock_idle_alarm"
-        android:layout_gravity="center"/>
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/infinity"
+        android:background="#ffffff"
+        />
 </FrameLayout>
