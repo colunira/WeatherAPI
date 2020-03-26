@@ -10,12 +10,31 @@
         android:name="com.example.weatherapp.ui.main.MainFragment"
         android:label="MainFragment" >
         <action
-            android:id="@+id/action_mainFragment_to_weatherFragment"
-            app:destination="@id/weatherFragment" />
+            android:id="@+id/action_mainFragment_to_loadingFragment"
+            app:destination="@id/loadingFramgent" />
+        <argument
+            android:name="isCallFailed"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
     <fragment
         android:id="@+id/weatherFragment"
         android:name="com.example.weatherapp.ui.main.WeatherFragment"
         android:label="fragment_weather"
         tools:layout="@layout/fragment_weather" />
+    <fragment
+        android:id="@+id/loadingFramgent"
+        android:name="com.example.weatherapp.ui.main.LoadingFramgent"
+        android:label="fragment_loading"
+        tools:layout="@layout/fragment_loading" >
+        <action
+            android:id="@+id/action_loadingFramgent_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+        <action
+            android:id="@+id/action_loadingFramgent_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="cityName"
+            app:argType="string" />
+    </fragment>
 </navigation>

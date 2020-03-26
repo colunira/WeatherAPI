@@ -1,5 +1,7 @@
 package com.example.weatherapp.model
 
+import android.view.ViewDebug
+
 data class City(
     val base: String,
     val clouds: Clouds,
@@ -14,4 +16,8 @@ data class City(
     val visibility: Int,
     val weather: List<Weather>,
     val wind: Wind
-)
+) {
+    override fun toString(): String {
+        return name
+    }
+}

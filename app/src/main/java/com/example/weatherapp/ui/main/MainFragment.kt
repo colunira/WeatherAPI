@@ -3,10 +3,12 @@ package com.example.weatherapp.ui.main
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.example.weatherapp.R
 import kotlinx.android.synthetic.main.main_fragment.*
 import kotlinx.android.synthetic.main.main_fragment.view.*
@@ -31,7 +33,7 @@ class MainFragment : Fragment() {
                 city_text_input.error = getString(R.string.city_name_error)
             } else {
                 city_text_input.error = null
-                findNavController().navigate(MainFragmentDirections.actionMainFragmentToWeatherFragment())
+                findNavController().navigate(MainFragmentDirections.actionMainFragmentToLoadingFragment(view.city_edit_text.toString()))
             }
         }
 
@@ -46,7 +48,6 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
     private fun isNameValid(text: Editable?): Boolean {
