@@ -49,9 +49,11 @@ class WeatherFragment : Fragment() {
         val currentDateTime = LocalDateTime.now().format(formatter)
 
         val timeFormatter = DateTimeFormatter.ofPattern("HH:mm")
-        val sunrise = LocalDateTime.ofInstant(Instant.ofEpochMilli(cityWeather.sys.sunrise.toLong()), ZoneId.systemDefault())
+        val sunriseUNIX = cityWeather.sys.sunrise
+        val sunsetUNIX = cityWeather.sys.sunset
+        val sunrise = LocalDateTime.ofInstant(Instant.ofEpochSecond(sunriseUNIX.toLong()), ZoneId.systemDefault())
             .format(timeFormatter)
-        val sunset = LocalDateTime.ofInstant(Instant.ofEpochMilli(cityWeather.sys.sunset.toLong()), ZoneId.systemDefault())
+        val sunset = LocalDateTime.ofInstant(Instant.ofEpochSecond(sunsetUNIX.toLong()), ZoneId.systemDefault())
             .format(timeFormatter)
 
         cityNameText.text = cityWeather.name

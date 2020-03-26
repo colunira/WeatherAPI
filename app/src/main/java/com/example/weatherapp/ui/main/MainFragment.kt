@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.lifecycle.Observer
 import com.example.weatherapp.R
 import kotlinx.android.synthetic.main.main_fragment.*
@@ -28,6 +29,10 @@ class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         val view = inflater.inflate(R.layout.main_fragment, container, false)
+
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            activity?.finish()
+        }
 
         view.next_button.setOnClickListener {
             if (!isNameValid((city_edit_text.text!!))) {
